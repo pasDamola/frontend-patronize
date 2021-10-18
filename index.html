@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue Mastery</title>
+    <!-- Import Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/index.css" />
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div id="sidebar">
+        <div id="sidebar-image-container">
+          <img src="./assets/images/sidebar_image.png" />
+        </div>
+      </div>
+      <div id="main-content-container">
+        <div id="nav">
+          <div id="logout-button-container">Logout</div>
+        </div>
+        <div id="main-content">
+          <div v-for="(step, index) in steps" :key="step.id">
+            <div class="steps-container">
+                <div id="step-identifier" :style="[step.active ? {'background' : '#006AFF', 'color' : 'white'} : {background: '#E4E9EF', color: '#5B4CB'}]">{{ step.id }}</div>
+                <div id="step-content" :style="[step.active ? {'color' : '#141737', 'fontWeight': '500'} : { 'color': '#A5B4CB'}]">{{ step.step }}</div>
+            </div>
+          </div>
+        </div>
+        <hr>
+      </div>
+    </div>
+
+    <!-- Import App -->
+    <script src="./main.js"></script>
+
+    <!-- Import Components -->
+    <!-- <script src="./components/ProductDisplay.js"></script>
+    <script src="./components/ReviewForm.js"></script>
+    <script src="./components/ReviewList.js"></script> -->
+
+    <!-- Mount App -->
+    <script>
+      const mountedApp = app.mount("#app");
+    </script>
+  </body>
+</html>
